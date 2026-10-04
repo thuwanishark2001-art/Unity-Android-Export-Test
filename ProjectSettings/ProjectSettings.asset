@@ -62,8 +62,6 @@ PlayerSettings:
   mobileMTRendering: 1
   androidSupportedAspectRatio: 1.0
   androidMaxAspectRatio: 2.1
-  applicationIdentifier:
-    Android: com.example.unityandroidexporttest
   metroPackageName: UnityAndroidExportTest
   webGLInitialMemorySize: 32
   webGLMaximumMemorySize: 2048
@@ -79,9 +77,6 @@ PlayerSettings:
     Standalone:
     - 
   platformArchitecture: {}
-  scriptingBackend:
-    Standalone: 1
-    Android: 1
   il2cppCompilerConfiguration: {}
   il2cppCodeGeneration:
     Android: 0
@@ -97,4 +92,3 @@ PlayerSettings:
   androidEnableArmv9SecurityFeatures: 0
   androidChromeosCompatibility: 1
   androidIsGame: 1
-  androidApplicationEntry: 1
