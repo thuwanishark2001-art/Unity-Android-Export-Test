@@ -1,13 +1,13 @@
 using UnityEditor;
-using UnityEditor.Callbacks;
+using UnityEditor.Build.Profile;
 using UnityEngine;
 
+[InitializeOnLoad]
 public static class CloudBuildSceneSetup
 {
-    [DidReloadScripts(1000)]
-    private static void SetupBuildScene()
+    static CloudBuildSceneSetup()
     {
-        EditorApplication.delayCall += EnsureBuildScene;
+        EnsureBuildScene();
     }
 
     private static void EnsureBuildScene()
@@ -25,21 +25,61 @@ public static class CloudBuildSceneSetup
             ImportAssetOptions.ForceSynchronousImport
         );
 
-        SceneAsset scene = AssetDatabase.LoadAssetAtPath<SceneAsset>(scenePath);
+        string guid = AssetDatabase.AssetPathToGUID(scenePath);
 
-        if (scene == null)
+        if (string.IsNullOrEmpty(guid))
         {
-            Debug.LogError("CloudBuildSceneSetup: Could not load TestScene.unity.");
+            Debug.LogError("CloudBuildSceneSetup: TestScene.unity has no valid GUID.");
             return;
         }
 
-        EditorBuildSettings.scenes = new[]
+        EditorBuildSettingsScene[] scenes =
         {
             new EditorBuildSettingsScene(scenePath, true)
         };
 
-        Debug.Log(
-            "CloudBuildSceneSetup: TestScene.unity registered successfully for Android build."
-        );
+        // Set the global scene list.
+        EditorBuildSettings.globalScenes = scenes;
+
+        // Also set the active Build Profile scene list when one exists.
+        BuildProfile activeProfile = BuildProfile.GetActiveBuildProfile();
+
+        if (activeProfile != null)
+        {
+            activeProfile.scenes = scenes;
+            activeProfile.overrideGlobalScenes = true;
+
+            EditorUtility.SetDirty(activeProfile);
+            AssetDatabase.SaveAssets();
+
+            Debug.Log(
+                "CloudBuildSceneSetup: TestScene.unity registered in ACTIVE BUILD PROFILE."
+            );
+        }
+        else
+        {
+            Debug.Log(
+                "CloudBuildSceneSetup: TestScene.unity registered in GLOBAL BUILD SETTINGS."
+            );
+        }
+
+        // Final verification.
+        EditorBuildSettingsScene[] finalScenes = EditorBuildSettings.scenes;
+
+        if (finalScenes != null && finalScenes.Length > 0)
+        {
+            Debug.Log(
+                "CloudBuildSceneSetup: VERIFIED scene count = "
+                + finalScenes.Length
+                + ", first scene = "
+                + finalScenes[0].path
+            );
+        }
+        else
+        {
+            Debug.LogError(
+                "CloudBuildSceneSetup: VERIFICATION FAILED - scene list is empty."
+            );
+        }
     }
 }
