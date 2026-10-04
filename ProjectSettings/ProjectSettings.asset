@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!129 &1
+PlayerSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 26
+  productGUID: 00000000000000000000000000000001
+  AndroidProfiler: 0
+  AndroidFilterTouchesWhenObscured: 0
+  AndroidEnableSustainedPerformanceMode: 0
+  defaultScreenOrientation: 3
+  targetDevice: 2
+  useOnDemandResources: 0
+  useOSAutorotation: 1
+  use32BitDisplayBuffer: 1
+  preserveFramebufferAlpha: 0
+  disableDepthAndStencilBuffers: 0
+  androidStartInFullscreen: 1
+  androidRenderOutsideSafeArea: 1
+  androidUseSwappy: 1
+  androidBlitType: 0
+  androidResizableWindow: 0
+  androidDefaultWindowWidth: 1920
+  androidDefaultWindowHeight: 1080
+  androidMinimumWindowWidth: 400
+  androidMinimumWindowHeight: 300
+  androidFullscreenMode: 1
+  androidAutoRotationBehavior: 1
+  androidTargetArchitectures: 1
+  androidTargetDevices: 0
+  androidSplashScreen: {fileID: 0}
+  androidSplashScreenBackground: {r: 0.05, g: 0.08, b: 0.12, a: 1}
+  androidSplashScreenLogos: []
+  androidKeystoreName:
+  androidKeystorePass:
+  androidKeyaliasName:
+  androidKeyaliasPass:
+  applicationIdentifier:
+    Standalone: com.example.unityandroidexporttest
+    Android: com.example.unityandroidexporttest
+  buildNumber:
+    Standalone: 0
+    VisionOS: 0
+    iPhone: 0
+    tvOS: 0
+    Android: 1
+  bundleVersion: 1.0
+  metroPackageVersion: 1.0
+  productName: Unity Android Export Test
+  companyName: Test Company
+  version: 1.0
+  bundleIdentifier: com.example.unityandroidexporttest
+  AndroidBundleVersionCode: 1
+  AndroidMinSdkVersion: 23
+  AndroidTargetSdkVersion: 35
+  scriptingBackend:
+    Android: 1
+  activeInputHandler: 0
+  apiCompatibilityLevelPerPlatform:
+    Android: 6
+  m_RenderingPath: 1
+  mobileMTRendering: 1
+  androidSupportedAspectRatio: 1.0
+  androidMaxAspectRatio: 2.1
+  applicationIdentifier:
+    Android: com.example.unityandroidexporttest
+  metroPackageName: UnityAndroidExportTest
+  webGLInitialMemorySize: 32
+  webGLMaximumMemorySize: 2048
+  webGLMemoryGrowthMode: 2
+  webGLMemoryLinearGrowthStep: 16
+  webGLMemoryGeometricGrowthStep: 0.2
+  webGLMemoryGeometricGrowthCap: 96
+  iPhoneStrippingLevel: 0
+  AndroidTargetArchitectures: 1
+  AndroidTargetDevices: 0
+  scriptingDefineSymbols: {}
+  additionalCompilerArguments:
+    Standalone:
+    - 
+  platformArchitecture: {}
+  scriptingBackend:
+    Standalone: 1
+    Android: 1
+  il2cppCompilerConfiguration: {}
+  il2cppCodeGeneration:
+    Android: 0
+  managedStrippingLevel:
+    Android: 1
+  incrementalIl2cppBuild: {}
+  allowUnsafeCode: 0
+  useDeterministicCompilation: 1
+  enableRoslynAnalyzers: 1
+  additionalIl2CppArgs:
+  androidApplicationEntry: 1
+  androidGamepadSupport: 0
+  androidEnableArmv9SecurityFeatures: 0
+  androidChromeosCompatibility: 1
+  androidIsGame: 1
+  androidApplicationEntry: 1
